@@ -25,7 +25,8 @@ namespace WebAPI
             builder.Services.AddDbContext<JkidwpdbaseContext>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
-
+            builder.Services.AddScoped<IMenuService, MenuService>();
+            builder.Services.AddScoped<IMenuRespository, MenuRepository>();
 
             var secret = builder.Configuration.GetSection("Secret").Value;
             builder.Services.AddAuthentication(options =>
