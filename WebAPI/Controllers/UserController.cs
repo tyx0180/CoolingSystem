@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using Models.BModels;
 using Models.Dto;
 using Models.Models;
+using Service;
 using Service.Interface;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -74,6 +75,18 @@ namespace WebAPI.Controllers
                 Status = 1
             };
         }
-            
+        [HttpPost,Route("GetUserByFilter")]
+        public ActionResult<ResponseInfo> GetUser(SearchFilter filter)
+        {
+            PageModel<UserInfo> users= _userService.DoGetUsersByFilters(filter);
+
+            return new ResponseInfo()
+            {
+                Message = "获取菜单列表成功",
+                Title = "提示",
+                Value = users,
+                Status = 1
+            }; ;
+        }
     }
 }

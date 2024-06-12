@@ -1,4 +1,5 @@
-﻿using Models.Models;
+﻿using Models.BModels;
+using Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace Repository.Interface
     {
 
         public List<MenuInfo> GetMenuInfos();
+        public List<RoleInfo> GetMenusByUserId(int userId);
+        public PageModel<ViewMenuInfo> GetMenuInfosByFilter(SearchFilter menuFilters);
+        public PageModel<ViewMenuInfo> ModifyMenu(MenuInfoBO  menu);
+        public PageModel<ViewMenuInfo> DeleteMenu(DeleteModel<MenuInfo> menid);
     }
 }

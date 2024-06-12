@@ -13,5 +13,6 @@ namespace Repository.Interface
     {
       
         public UserInfo login(UserInfoBO user);
+        public PageModel<UserInfo> GetUsersByFilters(SearchFilter filters);
     }
 }

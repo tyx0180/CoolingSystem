@@ -11,5 +11,6 @@ namespace Service.Interface
     public interface IUserService
     {
         public UserInfo Dologin(UserInfoBO user);
+        public PageModel<UserInfo> DoGetUsersByFilters(SearchFilter filters);
     }
 }
